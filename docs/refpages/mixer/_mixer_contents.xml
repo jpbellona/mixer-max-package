@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet href="./_mixer_ref.xsl" type="text/xsl"?>
+<root>
+	<refpage name='mixer.aux.maxref.xml'/>
+  <refpage name='mixer.bypass.maxref.xml'/>
+  <refpage name='mixer.channel.maxref.xml'/>
+  <refpage name='mixer.channel.stereo.maxref.xml'/>
+  <refpage name='mixer.channel.basic.maxref.xml'/>
+  <refpage name='mixer.channel.basic.stereo.maxref.xml'/>
+  <refpage name='mixer.echo.maxref.xml'/>
+  <refpage name='mixer.eq.maxref.xml'/>
+  <refpage name='mixer.mute.maxref.xml'/>
+  <refpage name='mixer.pan.maxref.xml'/>
+  <refpage name='mixer.pan.stereo.maxref.xml'/>
+  <refpage name='mixer.peaklim.maxref.xml'/>
+  <refpage name='mixer.verb-plate.maxref.xml'/>
+</root>

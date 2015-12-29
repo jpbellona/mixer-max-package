@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet href="./_mixer_ref.xsl" type="text/xsl"?>
+<c74object category='audio, MSP' name='mixer' module='max, mixer'>
+  <digest>
+    A single channel strip, complete with mute, pan, and fader. No aux sends.
+  </digest>
+  <!--DESCRIPTION-->
+  <description>
+    <o>mixer.channel.basic</o> is a simple channel strip for most audio projects. For larger audio projects that require aux sends, consider using mixer.channel.
+  </description>
+  <metadatalist>
+    <metadata name='author'>
+      Jon Bellona
+    </metadata>
+    <metadata name='tag'>
+      audio
+    </metadata>
+    <metadata name='tag'>
+      mixer
+    </metadata>
+  </metadatalist>
+  <!--INLETS-->
+  <inletlist>
+    <inlet id="0" type="float">
+      <digest>
+        Mixing audio objects.
+      </digest>
+      <description>
+        TEXT_HERE
+      </description>
+    </inlet>
+  </inletlist>
+  <!--OUTLETS-->
+  <outletlist/>
+  <!--ATTRIBUTES-->
+  <attributelist>
+    <attribute name="volume" get="1" set="1" size="1" type="float">
+      <digest>
+        Initial volume of the fader. Range is live.gain dB (-70 to 6). Def. 0
+      </digest>
+      <description>
+        Initial volume of the fader. Range is live.gain dB (-70 to 6). Def. 0
+      </description>
+    </attribute>
+    <attribute name="pan" get="1" set="1" size="1" type="int">
+      <digest>
+        The initial pan setting. Range is 0-127. Default is 63.
+      </digest>
+      <description>
+        The initial pan setting. Range is 0-127. Default is 63.
+      </description>
+    </attribute>
+    <attribute name="mute" get="1" set="1" size="1" type="int">
+      <digest>
+        The mute button toggle.
+      </digest>
+      <description>
+        The mute button toggle.
+      </description>
+    </attribute>
+  </attributelist>
+  <!--MESSAGES-->
+  <methodlist>
+    <method name='volume'>
+      <digest>
+        Float changes the gain of the fader (-70 to 6).
+      </digest>
+      <description>
+        Float changes the gain of the fader (-70 to 6).
+      </description>
+    </method>
+    <method name='pan'>
+      <digest>
+        (0-127) sets the pan.
+      </digest>
+      <description>
+        (0-127) sets the pan.
+      </description>
+    </method>
+    <method name='mute'>
+      <digest>
+        Mute 0/1 turns the mute off and on.
+      </digest>
+      <description>
+        Mute 0/1 turns the mute off and on.
+      </description>
+    </method>
+  </methodlist>
+  <!--ARGUMENTS-->
+  <objarglist>
+    <!-- <objarg name="type" optional="1" type="number">
+      <digest>
+        Smooth type
+      </digest>
+      <description>
+        0 or 1 selects the smoothing type (0=step, 1=window).
+      </description>
+    </objarg>
+    <objarg name="step::size" optional="1" type="number">
+      <digest>
+        Determine size of step average
+      </digest>
+      <description>
+        This is the scripting name of the internal bpatcher and pattr object.
+      </description>
+    </objarg>
+    <objarg name="window::size" optional="1" type="number">
+      <digest>
+        Determine size of window
+      </digest>
+      <description>
+        This is the scripting name of the internal bpatcher and pattr object.
+      </description>
+    </objarg>
+    <objarg name="window::offset" optional="1" type="number">
+      <digest>
+        Determine size of window offset
+      </digest>
+      <description>
+        This is the scripting name of the internal bpatcher and pattr object.
+      </description>
+    </objarg> -->
+  </objarglist>
+  <!--EXAMPLE-->
+  <examplelist>
+    <!-- <example img='jcom.absdiff.maxref.png'/> -->
+  </examplelist>
+  <!--SEE ALSO-->
+  <seealsolist>
+    <seealso name='mixer.aux'/>
+    <seealso name='mixer.channel'/>
+    <seealso name='mixer.channel.stereo'/>
+    <seealso name='mixer.channel.basic.stereo'/>
+    <seealso name='mixer.bypass'/>
+    <seealso name='mixer.mute'/>
+    <seealso name='mixer.eq'/>
+    <seealso name='mixer.peaklim'/>
+    <seealso name='mixer.echo'/>
+    <seealso name='mixer.verb-plate'/>
+    <seealso name='mixer.group4.basic'/>
+    <seealso name='mixer.group8.basic'/>
+  </seealsolist>
+  <discussion>
+    _
+  </discussion>
+  <!--MISC-->
+  <misc name='Output'>
+    <entry name='1'>
+      <description>
+        <!-- Two smoothing mapping functions for modifying data. -->
+      </description>
+    </entry>
+  </misc>
+</c74object>

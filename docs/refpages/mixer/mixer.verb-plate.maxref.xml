@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet href="./_mixer_ref.xsl" type="text/xsl"?>
+<c74object category='audio, MSP' name='mixer' module='max, mixer'>
+  <digest>
+    Reverb effect.
+  </digest>
+  <!--DESCRIPTION-->
+  <description>
+    <o>mixer.verb-plate</o> is a reverb unit built using the Max yafr2 reverb abstraction. The object provides GUI controls as well as pattr for easy preset recall.
+  </description>
+  <metadatalist>
+    <metadata name='author'>
+      Jon Bellona
+    </metadata>
+    <metadata name='tag'>
+      audio
+    </metadata>
+    <metadata name='tag'>
+      mixer
+    </metadata>
+  </metadatalist>
+  <!--INLETS-->
+  <inletlist>
+    <inlet id="0" type="audio">
+      <digest>
+        Audio signal
+      </digest>
+      <description>
+        
+      </description>
+    </inlet>
+  </inletlist>
+  <!--OUTLETS-->
+  <outletlist/>
+  <!--ATTRIBUTES-->
+  <attributelist>
+    <attribute name="size" get="1" set="1" size="1" type="float">
+      <digest>
+        Size of the reverb space (0-127). Def. 64.
+      </digest>
+      <description>
+        Size of the reverb space (0-127), default 64. 0-127 maps to 0.01 1.6 in the yafr2 abstraction
+      </description>
+    </attribute>
+    <attribute name="decay" get="1" set="1" size="1" type="float">
+      <digest>
+        Decay of the reverb (0-127). Def. 40.
+      </digest>
+      <description>
+        Decay of the reverb (0-127). Def. 40. 0-127 mapes to 0.05 to 0.9 in the yafr2 abstraction.
+      </description>
+    </attribute>
+    <attribute name="wet" get="1" set="1" size="1" type="float">
+      <digest>
+        Wetness of the reverb (0-127), not as percentage. Def. 64, or 50%
+      </digest>
+      <description>
+        Wetness of the reverb (0-127), not as percentage. Def. 64, or 50%
+      </description>
+    </attribute>
+    <attribute name="original" get="1" set="1" size="1" type="float">
+      <digest>
+        Original signal present in the reverb (0-127), not as percentage. Def. 127, or 100%
+      </digest>
+      <description>
+        Original signal present in the reverb (0-127), not as percentage. Def. 127, or 100%
+      </description>
+    </attribute>
+  </attributelist>
+  <!--MESSAGES-->
+  <methodlist>
+    <method name='size'>
+      <digest>
+        Size of the reverb space (0-127). Def. 64.
+      </digest>
+      <description>
+        Size of the reverb space (0-127), default 64. 0-127 maps to 0.01 1.6 in the yafr2 abstraction
+      </description>
+    </method>
+    <method name='decay'>
+      <digest>
+        Decay of the reverb (0-127). Def. 40.
+      </digest>
+      <description>
+        Decay of the reverb (0-127). Def. 40. 0-127 mapes to 0.05 to 0.9 in the yafr2 abstraction.
+      </description>
+    </method>
+    <method name='wet'>
+      <digest>
+        Wetness of the reverb (0-127), not as percentage. Def. 64, or 50%
+      </digest>
+      <description>
+        Wetness of the reverb (0-127), not as percentage. Def. 64, or 50%
+      </description>
+    </method>
+    <method name='original'>
+      <digest>
+        Original signal present in the reverb (0-127), not as percentage. Def. 127, or 100%
+      </digest>
+      <description>
+        Original signal present in the reverb (0-127), not as percentage. Def. 127, or 100%
+      </description>
+    </method>
+  </methodlist>
+  <!--ARGUMENTS-->
+  <objarglist>
+    <!-- <objarg name="type" optional="1" type="number">
+      <digest>
+        Smooth type
+      </digest>
+      <description>
+        0 or 1 selects the smoothing type (0=step, 1=window).
+      </description>
+    </objarg>
+    <objarg name="step::size" optional="1" type="number">
+      <digest>
+        Determine size of step average
+      </digest>
+      <description>
+        This is the scripting name of the internal bpatcher and pattr object.
+      </description>
+    </objarg>
+    <objarg name="window::size" optional="1" type="number">
+      <digest>
+        Determine size of window
+      </digest>
+      <description>
+        This is the scripting name of the internal bpatcher and pattr object.
+      </description>
+    </objarg>
+    <objarg name="window::offset" optional="1" type="number">
+      <digest>
+        Determine size of window offset
+      </digest>
+      <description>
+        This is the scripting name of the internal bpatcher and pattr object.
+      </description>
+    </objarg> -->
+  </objarglist>
+  <!--EXAMPLE-->
+  <examplelist>
+    <!-- <example img='jcom.absdiff.maxref.png'/> -->
+  </examplelist>
+  <!--SEE ALSO-->
+  <seealsolist>
+    <seealso name='mixer.aux'/>
+    <seealso name='mixer.channel'/>
+    <seealso name='mixer.channel.basic'/>
+    <seealso name='mixer.channel.stereo'/>
+    <seealso name='mixer.channel.basic.stereo'/>
+    <seealso name='mixer.bypass'/>
+    <seealso name='mixer.echo'/>
+    <seealso name='mixer.eq'/>
+    <seealso name='mixer.mute'/>
+    <seealso name='mixer.pan'/>
+    <seealso name='mixer.pan.stereo'/>
+  </seealsolist>
+  <discussion>
+    _
+  </discussion>
+  <!--MISC-->
+  <misc name='Output'>
+    <entry name='1'>
+      <description>
+        <!-- Two smoothing mapping functions for modifying data. -->
+      </description>
+    </entry>
+  </misc>
+</c74object>

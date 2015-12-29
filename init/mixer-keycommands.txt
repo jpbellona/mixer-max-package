@@ -1,0 +1,1 @@
+max definecommand M patcher inserttextobj "bpatcher @name mixer.";

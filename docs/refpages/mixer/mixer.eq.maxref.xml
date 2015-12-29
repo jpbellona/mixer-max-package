@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet href="./_mixer_ref.xsl" type="text/xsl"?>
+<c74object category='audio, MSP' name='mixer' module='max, mixer'>
+  <digest>
+    Equalizer for audio.
+  </digest>
+  <!--DESCRIPTION-->
+  <description>
+    <o>mixer.eq</o> is an equalizer built using <o>cascade~</o> and <o>filtergraph~</o>. The object provides GUI and pattr control of a series of biquad filters. You can send control messages in the second inlet to control <o>filtergraph~</o>.
+  </description>
+  <metadatalist>
+    <metadata name='author'>
+      Jon Bellona
+    </metadata>
+    <metadata name='tag'>
+      audio
+    </metadata>
+    <metadata name='tag'>
+      mixer
+    </metadata>
+  </metadatalist>
+  <!--INLETS-->
+  <inletlist>
+    <inlet id="0" type="audio">
+      <digest>
+        Audio signal
+      </digest>
+      <description>
+        
+      </description>
+    </inlet>
+  </inletlist>
+  <!--OUTLETS-->
+  <outletlist/>
+  <!--ATTRIBUTES-->
+  <attributelist>
+    <attribute name="nfilters" get="1" set="1" size="1" type="int">
+      <digest>
+        The number of biquad filters. Default is 5.
+      </digest>
+      <description>
+        The number of biquad filters.
+      </description>
+    </attribute>
+    <attribute name="filter" get="1" set="1" size="1" type="string">
+      <digest>
+        The type of filter (display, lowpass, highpass, bandpass, bandstop, peaknotch, lowshelf, highshelf, resonant, allpass). Default is allpass.
+      </digest>
+      <description>
+        The type of filter.
+      </description>
+    </attribute>
+    <attribute name="bypass" get="1" set="1" size="1" type="int">
+      <digest>
+        Filter bypass (0/1).
+      </digest>
+      <description>
+        Filter bypass (0/1).
+      </description>
+    </attribute>
+  </attributelist>
+  <!--MESSAGES-->
+  <methodlist>
+    <method name='nfilters'>
+      <digest>
+        The number of biquad filters.
+      </digest>
+      <description>
+        The number of biquad filters.
+      </description>
+    </method>
+    <method name='filter'>
+      <digest>
+        The type of filter as string (display, lowpass, highpass, bandpass, bandstop, peaknotch, lowshelf, highshelf, resonant, allpass).
+      </digest>
+      <description>
+        The type of filter (display, lowpass, highpass, bandpass, bandstop, peaknotch, lowshelf, highshelf, resonant, allpass).
+      </description>
+    </method>
+    <method name='bypass'>
+      <digest>
+        0/1 turns bypass off or on.
+      </digest>
+      <description>
+        0/1 turns bypass off or on.
+      </description>
+    </method>
+    <method name='filtergraph~'>
+      <digest>
+        Any message used to control <o>filtergraph~</o> may also be sent through. See <o>filtergraph~</o> reference.
+      </digest>
+      <description>
+        Any message used to control <o>filtergraph~</o> may also be sent through. See <o>filtergraph~</o> reference.
+      </description>
+    </method>
+  </methodlist>
+  <!--ARGUMENTS-->
+  <objarglist>
+    <!-- <objarg name="type" optional="1" type="number">
+      <digest>
+        Smooth type
+      </digest>
+      <description>
+        0 or 1 selects the smoothing type (0=step, 1=window).
+      </description>
+    </objarg>
+    <objarg name="step::size" optional="1" type="number">
+      <digest>
+        Determine size of step average
+      </digest>
+      <description>
+        This is the scripting name of the internal bpatcher and pattr object.
+      </description>
+    </objarg>
+    <objarg name="window::size" optional="1" type="number">
+      <digest>
+        Determine size of window
+      </digest>
+      <description>
+        This is the scripting name of the internal bpatcher and pattr object.
+      </description>
+    </objarg>
+    <objarg name="window::offset" optional="1" type="number">
+      <digest>
+        Determine size of window offset
+      </digest>
+      <description>
+        This is the scripting name of the internal bpatcher and pattr object.
+      </description>
+    </objarg> -->
+  </objarglist>
+  <!--EXAMPLE-->
+  <examplelist>
+    <!-- <example img='jcom.absdiff.maxref.png'/> -->
+  </examplelist>
+  <!--SEE ALSO-->
+  <seealsolist>
+    <seealso name='cascade~'/>
+    <seealso name='filtergraph~'/>
+    <seealso name='mixer.aux'/>
+    <seealso name='mixer.channel'/>
+    <seealso name='mixer.channel.basic'/>
+    <seealso name='mixer.channel.stereo'/>
+    <seealso name='mixer.bypass'/>
+    <seealso name='mixer.mute'/>
+    <seealso name='mixer.pan.stereo'/>
+  </seealsolist>
+  <discussion>
+    _
+  </discussion>
+  <!--MISC-->
+  <misc name='Output'>
+    <entry name='1'>
+      <description>
+        <!-- Two smoothing mapping functions for modifying data. -->
+      </description>
+    </entry>
+  </misc>
+</c74object>

@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet href="./_mixer_ref.xsl" type="text/xsl"?>
+<c74object category='audio, MSP' name='mixer' module='max, mixer'>
+  <digest>
+    Aux sends for audio channel strip.
+  </digest>
+  <!--DESCRIPTION-->
+  <description>
+    <o>mixer.aux</o> is a four aux send control object. The object provides a single audio inlet to four separate outlets and pattr control.
+  </description>
+  <metadatalist>
+    <metadata name='author'>
+      Jon Bellona
+    </metadata>
+    <metadata name='tag'>
+      audio
+    </metadata>
+    <metadata name='tag'>
+      mixer
+    </metadata>
+  </metadatalist>
+  <!--INLETS-->
+  <inletlist>
+    <inlet id="0" type="audio">
+      <digest>
+        Audio signal
+      </digest>
+      <description>
+        
+      </description>
+    </inlet>
+  </inletlist>
+  <!--OUTLETS-->
+  <outletlist/>
+  <!--ATTRIBUTES-->
+  <attributelist>
+    <attribute name="send" get="1" set="1" size="1" type="int">
+      <digest>
+        The send menu selection (1-4). Shows the aux channel control. Def. 1
+      </digest>
+      <description>
+        Current aux channel selection (1-4).
+      </description>
+    </attribute>
+    <attribute name="aux1" get="1" set="1" size="1" type="int">
+      <digest>
+        (0/1) turns the aux channel on/off. Def. 0
+      </digest>
+      <description>
+        (0/1) turns the aux channel on/off. Def. 0
+      </description>
+    </attribute>
+    <attribute name="aux2" get="1" set="1" size="1" type="int">
+      <digest>
+        (0/1) turns the aux channel on/off. Def. 0
+      </digest>
+      <description>
+        (0/1) turns the aux channel on/off. Def. 0
+      </description>
+    </attribute>
+    <attribute name="aux3" get="1" set="1" size="1" type="int">
+      <digest>
+        (0/1) turns the aux channel on/off. Def. 0
+      </digest>
+      <description>
+        (0/1) turns the aux channel on/off. Def. 0
+      </description>
+    </attribute>
+    <attribute name="aux4" get="1" set="1" size="1" type="int">
+      <digest>
+        (0/1) turns the aux channel on/off. Def. 0
+      </digest>
+      <description>
+        (0/1) turns the aux channel on/off. Def. 0
+      </description>
+    </attribute>
+    <attribute name="aux1_level" get="1" set="1" size="1" type="float">
+      <digest>
+        The aux send gain control, measured in dB (-70 to 6). Def. -70
+      </digest>
+      <description>
+        The aux send gain control, measured in dB (-70 to 6)
+      </description>
+    </attribute>
+    <attribute name="aux2_level" get="1" set="1" size="1" type="float">
+      <digest>
+        The aux send gain control, measured in dB (-70 to 6). Def. -70
+      </digest>
+      <description>
+        The aux send gain control, measured in dB (-70 to 6)
+      </description>
+    </attribute>
+    <attribute name="aux3_level" get="1" set="1" size="1" type="float">
+      <digest>
+        The aux send gain control, measured in dB (-70 to 6). Def. -70
+      </digest>
+      <description>
+        The aux send gain control, measured in dB (-70 to 6)
+      </description>
+    </attribute>
+    <attribute name="aux4_level" get="1" set="1" size="1" type="float">
+      <digest>
+        The aux send gain control, measured in dB (-70 to 6). Def. -70
+      </digest>
+      <description>
+        The aux send gain control, measured in dB (-70 to 6)
+      </description>
+    </attribute>
+  </attributelist>
+  <!--MESSAGES-->
+  <methodlist>
+    <method name="send">
+      <digest>
+        The send menu selection (1-4). Shows the aux channel control. Def. 1
+      </digest>
+      <description>
+        Current aux channel selection (1-4).
+      </description>
+    </method>
+    <method name="aux1">
+      <digest>
+        (0/1) turns the aux channel on/off. Def. 0
+      </digest>
+      <description>
+        (0/1) turns the aux channel on/off. Def. 0
+      </description>
+    </method>
+    <method name="aux2">
+      <digest>
+        (0/1) turns the aux channel on/off. Def. 0
+      </digest>
+      <description>
+        (0/1) turns the aux channel on/off. Def. 0
+      </description>
+    </method>
+    <method name="aux3">
+      <digest>
+        (0/1) turns the aux channel on/off. Def. 0
+      </digest>
+      <description>
+        (0/1) turns the aux channel on/off. Def. 0
+      </description>
+    </method>
+    <method name="aux4">
+      <digest>
+        (0/1) turns the aux channel on/off. Def. 0
+      </digest>
+      <description>
+        (0/1) turns the aux channel on/off. Def. 0
+      </description>
+    </method>
+    <method name="aux1_level">
+      <digest>
+        The aux send gain control, measured in dB (-70 to 6). Def. -70
+      </digest>
+      <description>
+        The aux send gain control, measured in dB (-70 to 6)
+      </description>
+    </method>
+    <method name="aux2_level">
+      <digest>
+        The aux send gain control, measured in dB (-70 to 6). Def. -70
+      </digest>
+      <description>
+        The aux send gain control, measured in dB (-70 to 6)
+      </description>
+    </method>
+    <method name="aux3_level">
+      <digest>
+        The aux send gain control, measured in dB (-70 to 6). Def. -70
+      </digest>
+      <description>
+        The aux send gain control, measured in dB (-70 to 6)
+      </description>
+    </method>
+    <method name="aux4_level">
+      <digest>
+        The aux send gain control, measured in dB (-70 to 6). Def. -70
+      </digest>
+      <description>
+        The aux send gain control, measured in dB (-70 to 6)
+      </description>
+    </method>
+  </methodlist>
+  <!--ARGUMENTS-->
+  <objarglist>
+    <!-- <objarg name="type" optional="1" type="number">
+      <digest>
+        Smooth type
+      </digest>
+      <description>
+        0 or 1 selects the smoothing type (0=step, 1=window).
+      </description>
+    </objarg>
+    <objarg name="step::size" optional="1" type="number">
+      <digest>
+        Determine size of step average
+      </digest>
+      <description>
+        This is the scripting name of the internal bpatcher and pattr object.
+      </description>
+    </objarg>
+    <objarg name="window::size" optional="1" type="number">
+      <digest>
+        Determine size of window
+      </digest>
+      <description>
+        This is the scripting name of the internal bpatcher and pattr object.
+      </description>
+    </objarg>
+    <objarg name="window::offset" optional="1" type="number">
+      <digest>
+        Determine size of window offset
+      </digest>
+      <description>
+        This is the scripting name of the internal bpatcher and pattr object.
+      </description>
+    </objarg> -->
+  </objarglist>
+  <!--EXAMPLE-->
+  <examplelist>
+    <!-- <example img='jcom.absdiff.maxref.png'/> -->
+  </examplelist>
+  <!--SEE ALSO-->
+  <seealsolist>
+    <seealso name='mixer.channel'/>
+    <seealso name='mixer.channel.stereo'/>
+    <seealso name='mixer.bypass'/>
+    <seealso name='mixer.mute'/>
+    <seealso name='mixer.pan'/>
+    <seealso name='mixer.pan.stereo'/>
+  </seealsolist>
+  <discussion>
+    _
+  </discussion>
+  <!--MISC-->
+  <misc name='Output'>
+    <entry name='1'>
+      <description>
+        <!-- Two smoothing mapping functions for modifying data. -->
+      </description>
+    </entry>
+  </misc>
+</c74object>

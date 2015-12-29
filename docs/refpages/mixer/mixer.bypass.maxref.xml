@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet href="./_mixer_ref.xsl" type="text/xsl"?>
+<c74object category='audio, MSP' name='mixer' module='max, mixer'>
+  <digest>
+    A simple gate to bypass an audio signal.
+  </digest>
+  <!--DESCRIPTION-->
+  <description>
+    <o>mixer.bypass</o> acts as a simple gate. The left outlet connects to your audio effect, while the right outlet should 'bypass' or skip the audio effect in the circuit.
+  </description>
+  <metadatalist>
+    <metadata name='author'>
+      Jon Bellona
+    </metadata>
+    <metadata name='tag'>
+      audio
+    </metadata>
+    <metadata name='tag'>
+      mixer
+    </metadata>
+  </metadatalist>
+  <!--INLETS-->
+  <inletlist>
+    <inlet id="0" type="float">
+      <digest>
+        Mixing audio objects.
+      </digest>
+      <description>
+        TEXT_HERE
+      </description>
+    </inlet>
+  </inletlist>
+  <!--OUTLETS-->
+  <outletlist/>
+  <!--ATTRIBUTES-->
+  <attributelist>
+    <!-- <attribute name="control" get="1" set="1" size="1" type="int">
+      <digest>
+        The control to listen for.
+      </digest>
+      <description>
+        (0) sets the thin type to poll. (1) sets the thin type to EQ. (2) sets the thin type to event.
+      </description>
+    </attribute> -->
+  </attributelist>
+  <!--MESSAGES-->
+  <methodlist>
+    <!-- <method name='open'>
+      <digest>
+        Sent via a pcontrol object, one may auto open the korgnano patcher window.
+      </digest>
+      <description>
+        Sent via a pcontrol object, one may auto open the korgnano patcher window.
+      </description>
+    </method> -->
+  </methodlist>
+  <!--ARGUMENTS-->
+  <objarglist>
+    <!-- <objarg name="type" optional="1" type="number">
+      <digest>
+        Smooth type
+      </digest>
+      <description>
+        0 or 1 selects the smoothing type (0=step, 1=window).
+      </description>
+    </objarg>
+    <objarg name="step::size" optional="1" type="number">
+      <digest>
+        Determine size of step average
+      </digest>
+      <description>
+        This is the scripting name of the internal bpatcher and pattr object.
+      </description>
+    </objarg>
+    <objarg name="window::size" optional="1" type="number">
+      <digest>
+        Determine size of window
+      </digest>
+      <description>
+        This is the scripting name of the internal bpatcher and pattr object.
+      </description>
+    </objarg>
+    <objarg name="window::offset" optional="1" type="number">
+      <digest>
+        Determine size of window offset
+      </digest>
+      <description>
+        This is the scripting name of the internal bpatcher and pattr object.
+      </description>
+    </objarg> -->
+  </objarglist>
+  <!--EXAMPLE-->
+  <examplelist>
+    <!-- <example img='jcom.absdiff.maxref.png'/> -->
+  </examplelist>
+  <!--SEE ALSO-->
+  <seealsolist>
+    <seealso name='mixer.aux'/>
+    <seealso name='mixer.channel'/>
+    <seealso name='mixer.channel.basic'/>
+    <seealso name='mixer.mute'/>
+    <seealso name='mixer.eq'/>
+    <seealso name='mixer.peaklim'/>
+    <seealso name='mixer.echo'/>
+    <seealso name='mixer.verb-plate'/>
+  </seealsolist>
+  <discussion>
+    _
+  </discussion>
+  <!--MISC-->
+  <misc name='Output'>
+    <entry name='1'>
+      <description>
+        <!-- Two smoothing mapping functions for modifying data. -->
+      </description>
+    </entry>
+  </misc>
+</c74object>

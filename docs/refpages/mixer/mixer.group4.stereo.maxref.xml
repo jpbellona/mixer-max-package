@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet href="./_mixer_ref.xsl" type="text/xsl"?>
+<c74object category='audio, MSP' name='mixer' module='max, mixer'>
+  <digest>
+    Four channel sub-group mixer.
+  </digest>
+  <!--DESCRIPTION-->
+  <description>
+    <o>mixer.group4.stereo</o> combines mixer.* objects to create a small 4 stereo-channel subgroup mixer.
+  </description>
+  <metadatalist>
+    <metadata name='author'>
+      Jon Bellona
+    </metadata>
+    <metadata name='tag'>
+      audio
+    </metadata>
+    <metadata name='tag'>
+      mixer
+    </metadata>
+  </metadatalist>
+  <!--INLETS-->
+  <inletlist>
+    <inlet id="0" type="audio">
+      <digest>
+        Audio signal
+      </digest>
+      <description>
+        
+      </description>
+    </inlet>
+  </inletlist>
+  <!--OUTLETS-->
+  <outletlist/>
+  <!--ATTRIBUTES-->
+  <attributelist>
+    <attribute name="mute" get="1" set="1" size="1" type="int">
+      <digest>
+        0/1 turns mute off and on.
+      </digest>
+      <description>
+        0/1 turns mute off and on.
+      </description>
+    </attribute>
+    <attribute name="master" get="1" set="1" size="1" type="string">
+      <digest>
+        The volume of the master fader (-70 to 6). Default -6.
+      </digest>
+      <description>
+        The volume of the master fader (-70 to 6). Default -6.
+      </description>
+    </attribute>
+  </attributelist>
+  <!--MESSAGES-->
+  <methodlist>
+    <method name='mute'>
+      <digest>
+        0/1 turns mute off and on.
+      </digest>
+      <description>
+        0/1 turns mute off and on.
+      </description>
+    </method>
+    <method name='master'>
+      <digest>
+        The volume of the master fader (-70 to 6). Default -6.
+      </digest>
+      <description>
+        The volume of the master fader (-70 to 6). Default -6.
+      </description>
+    </method>
+    <method name='int'>
+      <digest>
+        Messages to control a specific channel may be sent with a list, with the number of the <o>mixer.channel</o> as the first item. See <o>mixer.channel</o> for reference of specific controls.
+      </digest>
+      <description>
+        Messages to control a specific channel may be sent with a list, with the number of the <o>mixer.channel</o> as the first item. See <o>mixer.channel</o> for reference of specific controls.
+      </description>
+    </method>
+  </methodlist>
+  <!--ARGUMENTS-->
+  <objarglist>
+    <!-- <objarg name="type" optional="1" type="number">
+      <digest>
+        Smooth type
+      </digest>
+      <description>
+        0 or 1 selects the smoothing type (0=step, 1=window).
+      </description>
+    </objarg>
+    <objarg name="step::size" optional="1" type="number">
+      <digest>
+        Determine size of step average
+      </digest>
+      <description>
+        This is the scripting name of the internal bpatcher and pattr object.
+      </description>
+    </objarg>
+    <objarg name="window::size" optional="1" type="number">
+      <digest>
+        Determine size of window
+      </digest>
+      <description>
+        This is the scripting name of the internal bpatcher and pattr object.
+      </description>
+    </objarg>
+    <objarg name="window::offset" optional="1" type="number">
+      <digest>
+        Determine size of window offset
+      </digest>
+      <description>
+        This is the scripting name of the internal bpatcher and pattr object.
+      </description>
+    </objarg> -->
+  </objarglist>
+  <!--EXAMPLE-->
+  <examplelist>
+    <!-- <example img='jcom.absdiff.maxref.png'/> -->
+  </examplelist>
+  <!--SEE ALSO-->
+  <seealsolist>
+    <seealso name='mixer.aux'/>
+    <seealso name='mixer.channel'/>
+    <seealso name='mixer.channel.basic'/>
+    <seealso name='mixer.channel.stereo'/>
+    <seealso name='mixer.bypass'/>
+    <seealso name='mixer.group4'/>
+    <seealso name='mixer.group4.basic'/>
+    <seealso name='mixer.8channel'/>
+    <seealso name='mixer.mute'/>
+    <seealso name='mixer.pan'/>
+    <seealso name='live.gain~'/>
+    <seealso name='autopattr'/>
+    <seealso name='pattrstorage'/>
+  </seealsolist>
+  <discussion>
+    _
+  </discussion>
+  <!--MISC-->
+  <misc name='Output'>
+    <entry name='1'>
+      <description>
+        <!-- Two smoothing mapping functions for modifying data. -->
+      </description>
+    </entry>
+  </misc>
+</c74object>

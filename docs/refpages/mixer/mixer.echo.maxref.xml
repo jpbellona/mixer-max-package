@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet href="./_mixer_ref.xsl" type="text/xsl"?>
+<c74object category='audio, MSP' name='mixer' module='max, mixer'>
+  <digest>
+    Simple echo effect.
+  </digest>
+  <!--DESCRIPTION-->
+  <description>
+    <o>mixer.echo</o> is a simple tap delay echo. The object provides feedback and BPM controls (local or global) as well as integrating pattr for easy recall.
+  </description>
+  <metadatalist>
+    <metadata name='author'>
+      Jon Bellona
+    </metadata>
+    <metadata name='tag'>
+      audio
+    </metadata>
+    <metadata name='tag'>
+      mixer
+    </metadata>
+  </metadatalist>
+  <!--INLETS-->
+  <inletlist>
+    <inlet id="0" type="audio">
+      <digest>
+        Audio signal
+      </digest>
+      <description>
+        
+      </description>
+    </inlet>
+  </inletlist>
+  <!--OUTLETS-->
+  <outletlist/>
+  <!--ATTRIBUTES-->
+  <!-- patcherargs @delay 10 @transport internal @feedback 20. @timing 0 @localBPM 120 -->
+  <attributelist>
+    <attribute name="delay" get="1" set="1" size="1" type="int">
+      <digest>
+        Umenu selection for delay based upon BPM (local or global). Default is 10, or 8th note delay. Sorry, not user friendly.
+      </digest>
+      <description>
+        Umenu selection for delay based upon BPM (local or global). Time intervals are shortest to longest (128n 64n 32nt 64nd 32n 16nt 32nd 16n 8nt 16nd 8n 4nt 8nd 4n 2nt 4nd 2n 1nt 2nd 1n 1nd). Default is 10, or 8th note delay. 
+      </description>
+    </attribute>
+    <attribute name="transport" get="1" set="1" size="1" type="string">
+      <digest>
+        The transport name. Default is "internal", which follows any unnamed <o>transport</o> (i.e. global control).
+      </digest>
+      <description>
+        The transport name. Default is "internal", which follows any unnamed <o>transport</o> (i.e. global control).
+      </description>
+    </attribute>
+    <attribute name="feedback" get="1" set="1" size="1" type="float">
+      <digest>
+        The amount of feedback: 0 to 99.9
+      </digest>
+      <description>
+        The amount of feedback: 0 to 99.9
+      </description>
+    </attribute>
+    <attribute name="timing" get="1" set="1" size="1" type="int">
+      <digest>
+        0/1 selects timing control global or local. Global follows <o>transport</o> name, while local is an independently run timing clock (private var named <o>transport</o>).
+      </digest>
+      <description>
+        0/1 selects timing control global or local. Global follows <o>transport</o> name, while local is an independently run timing clock (private var named <o>transport</o>).
+      </description>
+    </attribute>
+    <attribute name="localBPM" get="1" set="1" size="1" type="int">
+      <digest>
+        Set the BPM of the local transport. For global transport control, you should be synchronizing with <o>transport</o>
+      </digest>
+      <description>
+        Set the BPM of the local transport. For global transport control, you should be synchronizing with <o>transport</o>
+      </description>
+    </attribute>
+  </attributelist>
+  <!--MESSAGES-->
+  <methodlist>
+    <method name='delay'>
+      <digest>
+        Umenu selection for delay based upon BPM
+      </digest>
+      <description>
+        Umenu selection for delay based upon BPM. Time intervals are shortest to longest (128n 64n 32nt 64nd 32n 16nt 32nd 16n 8nt 16nd 8n 4nt 8nd 4n 2nt 4nd 2n 1nt 2nd 1n 1nd). Default is 10, or 8th note delay. 
+      </description>
+    </method>
+    <method name='transport'>
+      <digest>
+        The name of the <o>transport</o>. "internal" is default, which will follow any unnamed <o>transport</o>.
+      </digest>
+      <description>
+        The name of the <o>transport</o>. "internal" is default, which will follow any unnamed <o>transport</o>.
+      </description>
+    </method>
+    <method name='feedback'>
+      <digest>
+        The amount of feedback: 0 to 99.9
+      </digest>
+      <description>
+        The amount of feedback: 0 to 99.9
+      </description>
+    </method>
+    <method name='timing'>
+      <digest>
+        0/1 selects timing control global or local. Global follows <o>transport</o> name, while local is an independently run timing clock (private var named <o>transport</o>).
+      </digest>
+      <description>
+        0/1 selects timing control global or local. Global follows <o>transport</o> name, while local is an independently run timing clock (private var named <o>transport</o>).
+      </description>
+    </method>
+    <method name='localBPM'>
+      <digest>
+        Set the BPM of the local transport. For global transport control, you should be synchronizing with <o>transport</o>
+      </digest>
+      <description>
+        Set the BPM of the local transport. For global transport control, you should be synchronizing with <o>transport</o>
+      </description>
+    </method>
+  </methodlist>
+  <!--ARGUMENTS-->
+  <objarglist>
+    <!-- <objarg name="type" optional="1" type="number">
+      <digest>
+        Smooth type
+      </digest>
+      <description>
+        0 or 1 selects the smoothing type (0=step, 1=window).
+      </description>
+    </objarg>
+    <objarg name="step::size" optional="1" type="number">
+      <digest>
+        Determine size of step average
+      </digest>
+      <description>
+        This is the scripting name of the internal bpatcher and pattr object.
+      </description>
+    </objarg>
+    <objarg name="window::size" optional="1" type="number">
+      <digest>
+        Determine size of window
+      </digest>
+      <description>
+        This is the scripting name of the internal bpatcher and pattr object.
+      </description>
+    </objarg>
+    <objarg name="window::offset" optional="1" type="number">
+      <digest>
+        Determine size of window offset
+      </digest>
+      <description>
+        This is the scripting name of the internal bpatcher and pattr object.
+      </description>
+    </objarg> -->
+  </objarglist>
+  <!--EXAMPLE-->
+  <examplelist>
+    <!-- <example img='jcom.absdiff.maxref.png'/> -->
+  </examplelist>
+  <!--SEE ALSO-->
+  <seealsolist>
+    <seealso name='transport'/>
+    <seealso name='mixer.aux'/>
+    <seealso name='mixer.channel'/>
+    <seealso name='mixer.channel.basic'/>
+    <seealso name='mixer.channel.stereo'/>
+    <seealso name='mixer.channel.basic.stereo'/>
+    <seealso name='mixer.bypass'/>
+    <seealso name='mixer.eq'/>
+    <seealso name='mixer.mute'/>
+    <seealso name='mixer.pan'/>
+    <seealso name='mixer.pan.stereo'/>
+    <seealso name='mixer.verb-plate'/>
+  </seealsolist>
+  <discussion>
+    _
+  </discussion>
+  <!--MISC-->
+  <misc name='Output'>
+    <entry name='1'>
+      <description>
+        <!-- Two smoothing mapping functions for modifying data. -->
+      </description>
+    </entry>
+  </misc>
+</c74object>

@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet href="./_mixer_ref.xsl" type="text/xsl"?>
+<c74object category='audio, MSP' name='mixer' module='max, mixer'>
+  <digest>
+    Peak limiter for audio.
+  </digest>
+  <!--DESCRIPTION-->
+  <description>
+    <o>mixer.peaklim</o> is a peak limiter built using <o>omx.peaklim~</o> and its helpfile GUI. The object adds the user controls into the abstraction as well as pattr for preset recall.
+  </description>
+  <metadatalist>
+    <metadata name='author'>
+      Jon Bellona
+    </metadata>
+    <metadata name='tag'>
+      audio
+    </metadata>
+    <metadata name='tag'>
+      mixer
+    </metadata>
+  </metadatalist>
+  <!--INLETS-->
+  <inletlist>
+    <inlet id="0" type="audio">
+      <digest>
+        Audio signal
+      </digest>
+      <description>
+        
+      </description>
+    </inlet>
+  </inletlist>
+  <!--OUTLETS-->
+  <outletlist/>
+  <!--ATTRIBUTES-->
+  <!-- @bypass 1 @thresh 50 @ingain 50 @outgain 50 @response 1 -->
+  <attributelist>
+    <attribute name="thresh" get="1" set="1" size="1" type="int">
+      <digest>
+        The compression threshold as dB. Default is 50.
+      </digest>
+      <description>
+        The compression threshold as dB. Default is 50.
+      </description>
+    </attribute>
+    <attribute name="ingain" get="1" set="1" size="1" type="int">
+      <digest>
+        The input gain. Def. 50
+      </digest>
+      <description>
+        The input gain. Def. 50
+      </description>
+    </attribute>
+    <attribute name="outgain" get="1" set="1" size="1" type="int">
+      <digest>
+        The output gain. Def. 50
+      </digest>
+      <description>
+        The output gain. Def. 50
+      </description>
+    </attribute>
+    <attribute name="response" get="1" set="1" size="1" type="int">
+      <digest>
+        The response mode of the limiter. Either punchy or smooth (0 or 1 respectively)
+      </digest>
+      <description>
+        The response mode of the limiter.
+      </description>
+    </attribute>
+  </attributelist>
+  <!--MESSAGES-->
+  <methodlist>
+    <method name='thresh'>
+      <digest>
+        The compression threshold as dB. Default is 50.
+      </digest>
+      <description>
+        The compression threshold as dB. Default is 50.
+      </description>
+    </method>
+    <method name='ingain'>
+      <digest>
+        The input gain. Def. 50
+      </digest>
+      <description>
+        The input gain. Def. 50
+      </description>
+    </method>
+    <method name='outgain'>
+      <digest>
+        The output gain. Def. 50
+      </digest>
+      <description>
+        The output gain. Def. 50
+      </description>
+    </method>
+    <method name='response'>
+      <digest>
+        The response mode of the limiter. Either punchy or smooth (0 or 1 respectively)
+      </digest>
+      <description>
+        The response mode of the limiter.
+      </description>
+    </method>
+    <method name='omx.peaklim~'>
+      <digest>
+        Any message used to control <o>omx.peaklim~</o> may also be sent through. See <o>omx.peaklim~</o> reference for messages (e.g. meters, meterRate, meterData).
+      </digest>
+      <description>
+        Any message used to control <o>omx.peaklim~</o> may also be sent through. See <o>omx.peaklim~</o> reference for messages (e.g. meters, meterRate, meterData).
+      </description>
+    </method>
+  </methodlist>
+  <!--ARGUMENTS-->
+  <objarglist>
+    <!-- <objarg name="type" optional="1" type="number">
+      <digest>
+        Smooth type
+      </digest>
+      <description>
+        0 or 1 selects the smoothing type (0=step, 1=window).
+      </description>
+    </objarg>
+    <objarg name="step::size" optional="1" type="number">
+      <digest>
+        Determine size of step average
+      </digest>
+      <description>
+        This is the scripting name of the internal bpatcher and pattr object.
+      </description>
+    </objarg>
+    <objarg name="window::size" optional="1" type="number">
+      <digest>
+        Determine size of window
+      </digest>
+      <description>
+        This is the scripting name of the internal bpatcher and pattr object.
+      </description>
+    </objarg>
+    <objarg name="window::offset" optional="1" type="number">
+      <digest>
+        Determine size of window offset
+      </digest>
+      <description>
+        This is the scripting name of the internal bpatcher and pattr object.
+      </description>
+    </objarg> -->
+  </objarglist>
+  <!--EXAMPLE-->
+  <examplelist>
+    <!-- <example img='jcom.absdiff.maxref.png'/> -->
+  </examplelist>
+  <!--SEE ALSO-->
+  <seealsolist>
+    <seealso name='omx.peaklim~'/>
+    <seealso name='omx.comp~'/>
+    <seealso name='mixer.aux'/>
+    <seealso name='mixer.channel'/>
+    <seealso name='mixer.channel.basic'/>
+    <seealso name='mixer.channel.stereo'/>
+    <seealso name='mixer.bypass'/>
+    <seealso name='mixer.eq'/>
+    <seealso name='mixer.mute'/>
+    <seealso name='mixer.pan.stereo'/>
+  </seealsolist>
+  <discussion>
+    _
+  </discussion>
+  <!--MISC-->
+  <misc name='Output'>
+    <entry name='1'>
+      <description>
+        <!-- Two smoothing mapping functions for modifying data. -->
+      </description>
+    </entry>
+  </misc>
+</c74object>

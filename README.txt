@@ -13,6 +13,14 @@ HOW TO USE
 Inside a Max window, you may type 'M' (that's shift-M) to quickly access these tools (bpatcher @name mixer.*), or create a new object, start typing "mixer" and let autocomplete help you do the rest. All mixer.* objects contain helpfiles, with attribute and methods reference, as well as links to other relevant objects in the package. All mixer objects are linked to pattr, which means channels, subgroups, and mixers can be easily stored and recalled with presets.
 
 CHANGELOG
+	v.0.0.2 -- minor fixes.
+		- mixer.8channel, Echo (Aux 1) was only feeding Left channel. Now is true mono on input and output. Incorporates stereo feed on L/R channels (use pan on aux return for mono)
+		- mixer.echo.  Added comment to reference and helpfile to denote Echo can be mono, or stereo. On first look, two inlets/outlets can be confusing.
+		- mixer.8channel, With all buttons that open windows (Aux, Echo, etc.) if user closes window, “close” message still appears on textbutton. Added closebang objects to EQ and Limiters to mirror user behavior. Added getSelf.js and closebang for Echo and Verb buttons, as well as adding this to the helpfiles of Echo and Verb.  
+		- For mixer.aux, added closebang that sends 0 to parent::auxWindowToggle to close window control button in mixer.channel and mixer.channel.stereo, independently.
+		- mixer.eq helpfile was showing as mixer.pan
+		- mixer.mute helpfile was showing as mixer.bypass
+
 	v.0.0.1 -- initial release
 
 MIXER.* OBJECTS
@@ -42,7 +50,14 @@ OTHER OBJECTS USED IN THIS LIBRARY
 
 TODO
 * Acquire User feedback --> collect at jon @ jpbellona.com. Please send!
-* Add more example files.
+
+WISHLIST
+• Add more example files.
+• EQ - odd configuration for starting- maybe several equally distributed bandpass filters with a low and high pass at each end?
+• It might be nice to be able to use hotkeys, e.g. hold down command and click on a slider to return it to default state.
+• Incorporate JS to connect/disconnect mixer objects automatically, especially dynamics processing units.
+• Modularize the dynamics section, umenu, similar to ProTools.  This could solve wishlist item above.
+
 
 License
 ----------------------------------------

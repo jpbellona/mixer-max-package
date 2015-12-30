@@ -6,7 +6,7 @@
   </digest>
   <!--DESCRIPTION-->
   <description>
-    <o>mixer.echo</o> is a simple tap delay echo. The object provides feedback and BPM controls (local or global) as well as integrating pattr for easy recall.
+    <o>mixer.echo</o> is a simple tap delay echo. The object provides feedback and BPM controls (local or global) as well as integrating pattr for easy recall.  Use left in/out for mono, or both inputs/outputs for stereo.
   </description>
   <metadatalist>
     <metadata name='author'>

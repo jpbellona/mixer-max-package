@@ -8,7 +8,7 @@
 			"architecture" : "x86"
 		}
 ,
-		"rect" : [ 580.0, 71.0, 711.0, 628.0 ],
+		"rect" : [ 74.0, 100.0, 679.0, 639.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -32,12 +32,59 @@
 					"fontname" : "Gill Sans",
 					"fontsize" : 13.0,
 					"frgb" : 0.0,
+					"hidden" : 1,
+					"id" : "obj-43",
+					"linecount" : 3,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 601.0, 387.0, 168.0, 51.0 ],
+					"text" : "mixer.echo sends 0 to its varname when closed by user instead of button. ",
+					"textcolor" : [ 0.426676, 0.426663, 0.42667, 1.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontname" : "Gill Sans",
+					"fontsize" : 12.0,
+					"hidden" : 1,
+					"id" : "obj-16",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 542.0, 360.0, 116.0, 20.0 ],
+					"text" : "receive mixer.echo[1]"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontname" : "Gill Sans",
+					"fontsize" : 13.0,
+					"frgb" : 0.0,
+					"id" : "obj-13",
+					"linecount" : 2,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 32.0, 486.5, 114.0, 36.0 ],
+					"text" : "Echo can be mono (L only) or stereo",
+					"textcolor" : [ 0.426676, 0.426663, 0.42667, 1.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontname" : "Gill Sans",
+					"fontsize" : 13.0,
+					"frgb" : 0.0,
 					"id" : "obj-41",
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 219.0, 274.0, 92.0, 21.0 ],
-					"presentation_rect" : [ 223.0, 270.0, 0.0, 0.0 ],
 					"text" : "transport name",
 					"textcolor" : [ 0.426676, 0.426663, 0.42667, 1.0 ]
 				}
@@ -67,7 +114,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 219.0, 296.0, 97.0, 18.0 ],
-					"presentation_rect" : [ 221.0, 311.0, 0.0, 0.0 ],
 					"text" : "transport internal"
 				}
 
@@ -83,7 +129,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 218.0, 396.0, 217.5, 36.0 ],
-					"presentation_rect" : [ 193.0, 412.0, 0.0, 0.0 ],
 					"text" : "Change the name of the transport to synchronize to a different transport",
 					"textcolor" : [ 0.426676, 0.426663, 0.42667, 1.0 ]
 				}
@@ -470,7 +515,7 @@
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 497.0, 525.0, 64.0, 20.0 ],
 					"text" : "mixer.echo",
-					"varname" : "mixer.bypass[1]"
+					"varname" : "mixer.echo[1]"
 				}
 
 			}
@@ -482,7 +527,7 @@
 					"name" : "mixer.echo.maxpat",
 					"numinlets" : 3,
 					"numoutlets" : 2,
-					"outlettype" : [ "signal", "signal" ],
+					"outlettype" : [ "signal", "" ],
 					"patching_rect" : [ 11.0, 387.0, 156.0, 95.0 ],
 					"varname" : "echo"
 				}
@@ -586,7 +631,8 @@
 					"destination" : [ "obj-6", 1 ],
 					"disabled" : 0,
 					"hidden" : 0,
-					"source" : [ "obj-1", 1 ]
+					"midpoints" : [ 20.5, 537.5, 46.5, 537.5 ],
+					"source" : [ "obj-1", 0 ]
 				}
 
 			}
@@ -596,16 +642,6 @@
 					"disabled" : 0,
 					"hidden" : 0,
 					"source" : [ "obj-1", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-1", 1 ],
-					"disabled" : 0,
-					"hidden" : 0,
-					"midpoints" : [ 20.5, 364.75, 89.0, 364.75 ],
-					"source" : [ "obj-10", 0 ]
 				}
 
 			}
@@ -643,6 +679,15 @@
 					"disabled" : 0,
 					"hidden" : 0,
 					"source" : [ "obj-15", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-39", 0 ],
+					"disabled" : 0,
+					"hidden" : 1,
+					"source" : [ "obj-16", 0 ]
 				}
 
 			}
@@ -833,12 +878,12 @@
  ],
 		"parameters" : 		{
 			"obj-10::obj-32" : [ "[8]", "[2]", 0 ],
-			"obj-1::obj-15" : [ "Interval[1]", "Interval", 2 ],
-			"obj-1::obj-50" : [ "live.numbox[5]", "live.numbox[4]", 0 ],
+			"obj-2::obj-50" : [ "live.numbox[5]", "live.numbox[4]", 0 ],
+			"obj-2::obj-15" : [ "Interval[1]", "Interval", 2 ],
+			"obj-1::obj-50" : [ "live.numbox[6]", "live.numbox[4]", 0 ],
+			"obj-1::obj-15" : [ "Interval[2]", "Interval", 2 ],
 			"obj-10::obj-35" : [ "[5]", "Level", 0 ],
-			"obj-2::obj-50" : [ "live.numbox[6]", "live.numbox[4]", 0 ],
-			"obj-10::obj-21::obj-6" : [ "live.tab[3]", "live.tab[1]", 0 ],
-			"obj-2::obj-15" : [ "Interval[2]", "Interval", 2 ]
+			"obj-10::obj-21::obj-6" : [ "live.tab[3]", "live.tab[1]", 0 ]
 		}
 ,
 		"dependency_cache" : [ 			{
@@ -853,6 +898,13 @@
 				"bootpath" : "/Applications/Max 6.1/packages/mixer-0.0.1/patchers/effects",
 				"patcherrelativepath" : "../patchers/effects",
 				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "getSelf.js",
+				"bootpath" : "/Applications/Max 6.1/packages/jpb-dev/javascript",
+				"patcherrelativepath" : "../../jpb-dev/javascript",
+				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{

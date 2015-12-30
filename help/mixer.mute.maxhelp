@@ -29,6 +29,123 @@
 		"tags" : "",
 		"boxes" : [ 			{
 				"box" : 				{
+					"fontface" : 2,
+					"fontname" : "Arial",
+					"fontsize" : 10.0,
+					"frgb" : 0.0,
+					"id" : "obj-14",
+					"linecount" : 4,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 126.5, 449.0, 88.0, 51.0 ],
+					"presentation_rect" : [ 137.5, 451.0, 0.0, 0.0 ],
+					"text" : "mute goes from 0 to positive, so scale is needed for live.gain~"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontname" : "Gill Sans",
+					"fontsize" : 12.0,
+					"hidden" : 1,
+					"id" : "obj-13",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 255.0, 334.0, 77.0, 20.0 ],
+					"text" : "loadmess 130"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"border" : 1,
+					"id" : "obj-12",
+					"maxclass" : "bpatcher",
+					"name" : "mixer.mute.maxpat",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "float" ],
+					"patching_rect" : [ 302.5, 390.0, 60.0, 26.0 ],
+					"presentation_rect" : [ 303.5, 398.0, 0.0, 0.0 ],
+					"varname" : "mixer.mute[1]"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-11",
+					"maxclass" : "gain~",
+					"numinlets" : 2,
+					"numoutlets" : 2,
+					"outlettype" : [ "signal", "int" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 255.0, 371.0, 28.0, 136.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontface" : 2,
+					"fontname" : "Arial",
+					"fontsize" : 10.0,
+					"frgb" : 0.0,
+					"id" : "obj-37",
+					"linecount" : 3,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 362.5, 390.0, 72.0, 40.0 ],
+					"text" : "recall prev. vol. after unmute"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontname" : "Gill Sans",
+					"fontsize" : 12.0,
+					"id" : "obj-5",
+					"maxclass" : "newobj",
+					"numinlets" : 6,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 126.5, 429.0, 88.0, 20.0 ],
+					"text" : "scale 0. 1. -70. 6."
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"channels" : 1,
+					"id" : "obj-3",
+					"maxclass" : "live.gain~",
+					"numinlets" : 1,
+					"numoutlets" : 4,
+					"outlettype" : [ "signal", "", "float", "list" ],
+					"parameter_enable" : 1,
+					"patching_rect" : [ 58.0, 371.0, 48.0, 136.0 ],
+					"saved_attribute_attributes" : 					{
+						"valueof" : 						{
+							"parameter_longname" : "live.gain~",
+							"parameter_shortname" : "live.gain~",
+							"parameter_type" : 0,
+							"parameter_mmin" : -70.0,
+							"parameter_mmax" : 6.0,
+							"parameter_initial" : [ 0.0 ],
+							"parameter_unitstyle" : 4
+						}
+
+					}
+,
+					"showname" : 0,
+					"varname" : "live.gain~"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"fontname" : "Gill Sans",
 					"fontsize" : 13.0,
 					"frgb" : 0.0,
@@ -37,81 +154,9 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 475.0, 535.0, 141.0, 36.0 ],
-					"presentation_rect" : [ 556.0, 370.0, 0.0, 0.0 ],
-					"text" : "mixer.bypass may also be used as an abstraction",
+					"patching_rect" : [ 419.0, 535.0, 167.0, 36.0 ],
+					"text" : "mixer.mute may also be used as an abstraction",
 					"textcolor" : [ 0.426676, 0.426663, 0.42667, 1.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"fontname" : "Gill Sans",
-					"fontsize" : 13.0,
-					"frgb" : 0.0,
-					"id" : "obj-4",
-					"linecount" : 2,
-					"maxclass" : "comment",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 170.0, 316.0, 196.0, 36.0 ],
-					"presentation_rect" : [ 170.0, 317.0, 0.0, 0.0 ],
-					"text" : "you may control bypass with an external toggle...",
-					"textcolor" : [ 0.426676, 0.426663, 0.42667, 1.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"fontname" : "Gill Sans",
-					"fontsize" : 13.0,
-					"frgb" : 0.0,
-					"id" : "obj-15",
-					"linecount" : 2,
-					"maxclass" : "comment",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 274.0, 354.0, 205.0, 36.0 ],
-					"text" : "or, you can also use pattr to directly control mixer.bypass",
-					"textcolor" : [ 0.426676, 0.426663, 0.42667, 1.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-14",
-					"maxclass" : "toggle",
-					"numinlets" : 1,
-					"numoutlets" : 1,
-					"outlettype" : [ "int" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 274.0, 390.0, 20.0, 20.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"fontname" : "Gill Sans",
-					"fontsize" : 12.0,
-					"id" : "obj-13",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 274.0, 420.0, 174.0, 20.0 ],
-					"text" : "pattrforward mixer.bypass::bypass"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-12",
-					"maxclass" : "toggle",
-					"numinlets" : 1,
-					"numoutlets" : 1,
-					"outlettype" : [ "int" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 144.0, 324.0, 20.0, 20.0 ]
 				}
 
 			}
@@ -140,30 +185,15 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "@feedback", 72 ],
-					"border" : 1,
-					"id" : "obj-5",
-					"maxclass" : "bpatcher",
-					"name" : "mixer.echo.maxpat",
-					"numinlets" : 3,
-					"numoutlets" : 2,
-					"outlettype" : [ "signal", "" ],
-					"patching_rect" : [ 58.0, 404.0, 154.0, 95.0 ],
-					"varname" : "mixer.echo"
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"fontname" : "Gill Sans",
 					"fontsize" : 12.0,
 					"id" : "obj-2",
 					"maxclass" : "newobj",
-					"numinlets" : 2,
-					"numoutlets" : 2,
-					"outlettype" : [ "signal", "signal" ],
-					"patching_rect" : [ 545.0, 509.0, 71.0, 20.0 ],
-					"text" : "mixer.bypass",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "float" ],
+					"patching_rect" : [ 470.0, 509.0, 65.0, 20.0 ],
+					"text" : "mixer.mute",
 					"varname" : "mixer.bypass[1]"
 				}
 
@@ -173,27 +203,12 @@
 					"border" : 1,
 					"id" : "obj-1",
 					"maxclass" : "bpatcher",
-					"name" : "mixer.bypass.maxpat",
-					"numinlets" : 2,
-					"numoutlets" : 2,
-					"outlettype" : [ "signal", "signal" ],
-					"patching_rect" : [ 58.0, 364.0, 105.0, 26.0 ],
-					"varname" : "mixer.bypass"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"fontname" : "Gill Sans",
-					"fontsize" : 13.0,
-					"frgb" : 0.0,
-					"id" : "obj-39",
-					"maxclass" : "comment",
+					"name" : "mixer.mute.maxpat",
 					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 316.0, 179.0, 196.0, 21.0 ],
-					"text" : "mixer.bypass object is a simple gate",
-					"textcolor" : [ 0.426676, 0.426663, 0.42667, 1.0 ]
+					"numoutlets" : 1,
+					"outlettype" : [ "float" ],
+					"patching_rect" : [ 126.5, 390.0, 60.0, 26.0 ],
+					"varname" : "mixer.mute"
 				}
 
 			}
@@ -253,13 +268,13 @@
 					"filename" : "helpdetails.js",
 					"id" : "obj-33",
 					"ignoreclick" : 1,
-					"jsarguments" : [ "mixer.bypass", 85 ],
+					"jsarguments" : [ "mixer.mute", 85 ],
 					"maxclass" : "jsui",
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 11.0, 8.0, 501.0, 134.0 ]
+					"patching_rect" : [ 11.0, 8.0, 505.0, 161.0 ]
 				}
 
 			}
@@ -272,7 +287,7 @@
 					"maxclass" : "panel",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 463.0, 500.0, 162.0, 80.0 ]
+					"patching_rect" : [ 407.0, 500.0, 179.0, 80.0 ]
 				}
 
 			}
@@ -288,25 +303,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-6", 1 ],
-					"disabled" : 0,
-					"hidden" : 1,
-					"source" : [ "obj-1", 1 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-6", 0 ],
-					"disabled" : 0,
-					"hidden" : 1,
-					"source" : [ "obj-1", 1 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-1", 0 ],
+					"destination" : [ "obj-11", 0 ],
 					"disabled" : 0,
 					"hidden" : 0,
 					"source" : [ "obj-10", 0 ]
@@ -315,7 +312,34 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-1", 1 ],
+					"destination" : [ "obj-3", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-10", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-12", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-11", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-6", 1 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-11", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-11", 0 ],
 					"disabled" : 0,
 					"hidden" : 0,
 					"source" : [ "obj-12", 0 ]
@@ -324,10 +348,10 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-13", 0 ],
+					"destination" : [ "obj-11", 0 ],
 					"disabled" : 0,
-					"hidden" : 0,
-					"source" : [ "obj-14", 0 ]
+					"hidden" : 1,
+					"source" : [ "obj-13", 0 ]
 				}
 
 			}
@@ -342,10 +366,10 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-6", 1 ],
+					"destination" : [ "obj-1", 0 ],
 					"disabled" : 0,
 					"hidden" : 0,
-					"source" : [ "obj-5", 0 ]
+					"source" : [ "obj-3", 2 ]
 				}
 
 			}
@@ -354,16 +378,24 @@
 					"destination" : [ "obj-6", 0 ],
 					"disabled" : 0,
 					"hidden" : 0,
+					"source" : [ "obj-3", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-3", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
 					"source" : [ "obj-5", 0 ]
 				}
 
 			}
  ],
 		"parameters" : 		{
-			"obj-5::obj-15" : [ "Interval[1]", "Interval", 2 ],
-			"obj-10::obj-35" : [ "[5]", "Level", 0 ],
-			"obj-5::obj-50" : [ "live.numbox[5]", "live.numbox[4]", 0 ],
 			"obj-10::obj-32" : [ "[8]", "[2]", 0 ],
+			"obj-3" : [ "live.gain~", "live.gain~", 0 ],
+			"obj-10::obj-35" : [ "[5]", "Level", 0 ],
 			"obj-10::obj-21::obj-6" : [ "live.tab[3]", "live.tab[1]", 0 ]
 		}
 ,
@@ -375,16 +407,9 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "mixer.bypass.maxpat",
-				"bootpath" : "/Applications/Max 6.1/packages/mixer-0.0.1/patchers/channelstrip",
+				"name" : "mixer.mute.maxpat",
+				"bootpath" : "/Applications/Max 6.1/packages/mixer-0.0.2/patchers/channelstrip",
 				"patcherrelativepath" : "../patchers/channelstrip",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "mixer.echo.maxpat",
-				"bootpath" : "/Applications/Max 6.1/packages/mixer-0.0.1/patchers/effects",
-				"patcherrelativepath" : "../patchers/effects",
 				"type" : "JSON",
 				"implicit" : 1
 			}

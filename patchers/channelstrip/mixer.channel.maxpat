@@ -29,6 +29,23 @@
 		"tags" : "",
 		"boxes" : [ 			{
 				"box" : 				{
+					"fontname" : "Gill Sans",
+					"fontsize" : 13.0,
+					"frgb" : 0.0,
+					"hidden" : 1,
+					"id" : "obj-5",
+					"linecount" : 3,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 608.0, 335.0, 155.0, 51.0 ],
+					"text" : "mixer.aux sends 0 to parent::auxWindowToggle to close this button",
+					"textcolor" : [ 0.426676, 0.426663, 0.42667, 1.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"fontname" : "Arial",
 					"fontsize" : 12.0,
 					"id" : "obj-36",
@@ -426,7 +443,8 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 2.5, 1.0, 43.0, 21.0 ],
 					"text" : "Aux",
-					"texton" : "Aux"
+					"texton" : "Aux",
+					"varname" : "auxWindowToggle"
 				}
 
 			}
@@ -455,7 +473,7 @@
 					"outlettype" : [ "signal", "signal", "signal", "signal" ],
 					"patching_rect" : [ 608.0, 464.5, 177.000061, 20.0 ],
 					"text" : "mixer.aux",
-					"varname" : "jpb.auxSend"
+					"varname" : "auxSends"
 				}
 
 			}
@@ -696,12 +714,13 @@
 					"outlettype" : [ "", "", "", "" ],
 					"patching_rect" : [ 779.25, 67.0, 59.5, 20.0 ],
 					"restore" : 					{
+						"auxWindowToggle" : [ 0 ],
 						"channel" : [ 1 ],
 						"volume" : [ 0.0 ]
 					}
 ,
 					"text" : "autopattr",
-					"varname" : "u365000887"
+					"varname" : "u146004664"
 				}
 
 			}
@@ -1168,9 +1187,9 @@
 			}
  ],
 		"parameters" : 		{
-			"obj-4" : [ "live.gain~", "live.gain~", 0 ],
 			"obj-17::obj-27" : [ "aux1_level", "live.gain~", 0 ],
 			"obj-17::obj-24" : [ "aux2_level", "live.gain~", 0 ],
+			"obj-4" : [ "live.gain~", "live.gain~", 0 ],
 			"obj-17::obj-25" : [ "aux3_level", "live.gain~", 0 ],
 			"obj-17::obj-26" : [ "aux4_level", "live.gain~", 0 ]
 		}
@@ -1180,6 +1199,13 @@
 				"bootpath" : "/Applications/Max 6.1/packages/mixer-0.0.1/patchers/channelstrip",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "getSelf.js",
+				"bootpath" : "/Applications/Max 6.1/packages/jpb-dev/javascript",
+				"patcherrelativepath" : "../../../jpb-dev/javascript",
+				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{

@@ -30,6 +30,23 @@
 		"boxes" : [ 			{
 				"box" : 				{
 					"fontname" : "Gill Sans",
+					"fontsize" : 13.0,
+					"frgb" : 0.0,
+					"hidden" : 1,
+					"id" : "obj-9",
+					"linecount" : 4,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 453.5, 157.25, 155.0, 66.0 ],
+					"text" : "if user closes window,\nmixer.aux sends 0 to parent::auxWindowToggle to close this button too",
+					"textcolor" : [ 0.426676, 0.426663, 0.42667, 1.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontname" : "Gill Sans",
 					"fontsize" : 9.0,
 					"hidden" : 1,
 					"id" : "obj-24",
@@ -52,7 +69,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 155.0, 299.0, 49.0, 18.0 ],
-					"presentation_rect" : [ 279.0, 299.0, 0.0, 0.0 ],
 					"text" : "aux1 $1"
 				}
 
@@ -95,7 +111,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 228.5, 394.0, 80.0, 21.0 ],
-					"presentation_rect" : [ 211.5, 355.0, 0.0, 0.0 ],
 					"text" : "Aux 1 (echo)",
 					"textcolor" : [ 0.426676, 0.426663, 0.42667, 1.0 ]
 				}
@@ -111,7 +126,6 @@
 					"outlettype" : [ "signal", "", "float", "list" ],
 					"parameter_enable" : 1,
 					"patching_rect" : [ 210.5, 446.5, 48.0, 136.0 ],
-					"presentation_rect" : [ 210.0, 451.5, 0.0, 0.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
 							"parameter_longname" : "live.gain~[1]",
@@ -231,7 +245,8 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 17.5, 16.0, 43.0, 21.0 ],
 					"text" : "Aux",
-					"texton" : "Aux"
+					"texton" : "Aux",
+					"varname" : "auxWindowToggle"
 				}
 
 			}
@@ -333,7 +348,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 416.5, 306.5, 126.0, 36.0 ],
+					"patching_rect" : [ 416.5, 306.5, 127.0, 36.0 ],
 					"text" : "mixer.aux may also be used as an abstraction",
 					"textcolor" : [ 0.426676, 0.426663, 0.42667, 1.0 ]
 				}
@@ -670,21 +685,21 @@
 			}
  ],
 		"parameters" : 		{
-			"obj-10::obj-21::obj-6" : [ "live.tab[3]", "live.tab[1]", 0 ],
-			"obj-1::obj-27" : [ "aux1_level", "live.gain~", 0 ],
 			"obj-17::obj-26" : [ "aux4_level[1]", "live.gain~", 0 ],
-			"obj-17::obj-25" : [ "aux3_level[1]", "live.gain~", 0 ],
-			"obj-3" : [ "live.gain~", "live.gain~", 0 ],
-			"obj-2::obj-15" : [ "Interval[1]", "Interval", 2 ],
-			"obj-17::obj-24" : [ "aux2_level[1]", "live.gain~", 0 ],
-			"obj-4" : [ "live.gain~[1]", "live.gain~", 0 ],
-			"obj-2::obj-50" : [ "live.numbox[5]", "live.numbox[4]", 0 ],
-			"obj-1::obj-26" : [ "aux4_level", "live.gain~", 0 ],
-			"obj-10::obj-35" : [ "[5]", "Level", 0 ],
+			"obj-1::obj-27" : [ "aux1_level", "live.gain~", 0 ],
 			"obj-1::obj-24" : [ "aux2_level", "live.gain~", 0 ],
-			"obj-17::obj-27" : [ "aux1_level[1]", "live.gain~", 0 ],
 			"obj-10::obj-32" : [ "[8]", "[2]", 0 ],
-			"obj-1::obj-25" : [ "aux3_level", "live.gain~", 0 ]
+			"obj-2::obj-50" : [ "live.numbox[5]", "live.numbox[4]", 0 ],
+			"obj-4" : [ "live.gain~[1]", "live.gain~", 0 ],
+			"obj-3" : [ "live.gain~", "live.gain~", 0 ],
+			"obj-1::obj-25" : [ "aux3_level", "live.gain~", 0 ],
+			"obj-17::obj-27" : [ "aux1_level[1]", "live.gain~", 0 ],
+			"obj-2::obj-15" : [ "Interval[1]", "Interval", 2 ],
+			"obj-10::obj-35" : [ "[5]", "Level", 0 ],
+			"obj-17::obj-25" : [ "aux3_level[1]", "live.gain~", 0 ],
+			"obj-1::obj-26" : [ "aux4_level", "live.gain~", 0 ],
+			"obj-10::obj-21::obj-6" : [ "live.tab[3]", "live.tab[1]", 0 ],
+			"obj-17::obj-24" : [ "aux2_level[1]", "live.gain~", 0 ]
 		}
 ,
 		"dependency_cache" : [ 			{
@@ -699,6 +714,13 @@
 				"bootpath" : "/Applications/Max 6.1/packages/mixer-0.0.1/patchers/channelstrip",
 				"patcherrelativepath" : "../patchers/channelstrip",
 				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "getSelf.js",
+				"bootpath" : "/Applications/Max 6.1/packages/jpb-dev/javascript",
+				"patcherrelativepath" : "../../jpb-dev/javascript",
+				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
